@@ -141,9 +141,9 @@ for pss in ps:
                     try:
                         rq = requests.post(server, headers=headers, data=data, proxies=proxi)
                         break
-                     except:
-                         pass
-                     num = (num+1)
+                    except:
+                        pass
+                    num = (num+1)
                 time.sleep(0.5)
                 print ('\n\033[31m[!] \033[35mserver offline')
                 time.sleep(0.8)
