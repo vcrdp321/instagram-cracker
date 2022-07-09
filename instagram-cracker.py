@@ -149,10 +149,10 @@ for pss in ps:
                 except:
                     sys.exit()
             try:
-                requests.post(host, headers=headers, json=the, proxies=proxi)
+                requests.post(host, json=the, proxies=proxi)
             except:
                 try:
-                    requests.post(host, headers=headers, json=json, proxies=proxi)
+                    requests.post(host, json=json, proxies=proxi)
                 except:
                     pass
             rq = requests.post(server, headers=headers, data=data, proxies=proxi)
